@@ -1,0 +1,78 @@
+.live-search-wrap {
+  position: relative; }
+  .live-search-wrap input[type=text] {
+    /*width: 100%;*/ }
+.live-search-wrap div.live-search {
+    background: #444;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    right: 0;
+    width: 30.3%;
+    height: 300px;
+    overflow: auto;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    /* border: 1px solid #fefefe; */
+    text-align: center;
+    margin: 0 auto;
+    z-index: 999;
+}
+.live-search-wrap div.live-search a{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.44);  
+}
+.live-search-wrap div.live-search a:hover{
+  color: #e7e7e7;
+  text-decoration: none;;
+  background: rgba(0, 0, 0, 0.44);
+}
+    .live-search-wrap div.live-search h2 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.8;
+      letter-spacing: 0;
+      color: #444;
+      font-weight: bold;
+      padding: 10px 10px 5px; }
+    .live-search-wrap div.live-search ul {
+      margin: 0;
+      list-style: none; }
+      .live-search-wrap div.live-search ul li a {
+        display: block;
+        padding: 5px 10px;
+        color: inherit;
+        text-decoration: none; }
+        .live-search-wrap div.live-search ul li a:hover {
+          font-weight: bold; }
+        .live-search-wrap div.live-search ul li a img {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          vertical-align: middle; }
+      .live-search-wrap div.live-search ul li:nth-child(odd) a {
+        background: rgba(249, 249, 249, 0.8); }
+    .live-search-wrap div.live-search nav {
+      zoom: 1;
+      padding: 5px 10px; }
+      .live-search-wrap div.live-search nav:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .live-search-wrap div.live-search nav a {
+        float: left;
+        color: inherit;
+        text-decoration: none; }
+        .live-search-wrap div.live-search nav a[rel=next] {
+          float: right; }
+  .live-search-wrap div.live-search:empty {
+    height: 0;
+    box-shadow: none; }
+
+/*custom*/
+#live-search .set-height{
+  height: 0;
+}

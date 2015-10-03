@@ -1,0 +1,358 @@
+/*
+Theme Name: Bootstrap 3.1.1 Starter Wordpress theme
+Author: 3sparks llc
+Author URI: http://3sparks.net/
+Description: This is a blank bootstrap 3.1.1 theme for wordpress. Feel free to use this as a starter template for your projects.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*Wordpress editor styles start*/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background: #1c2939 url(images/tile.png) repeat;
+    color: #797979;
+}
+.navbar-default {
+    border-color: #444;
+    background: rgba(0, 0, 0, 0.44);
+    margin-top: 20px;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #989797;
+    background-color: transparent;
+}
+.wpcf7-form p {
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    color: #dedede;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #ABA0A0;
+    background-color: #444;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #444;
+}
+.navbar-default .navbar-toggle {
+    border-color: #444;
+}
+.cs_search_fld {
+	text-align:center;	
+}
+.cs_search_fld input[type=text] {
+    border: solid 1px #444;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.44);
+    width: 280px;
+    border-right: none;
+    outline: none;
+}
+.cs_search_fld input[type=submit]{
+	background-color: rgba(0, 0, 0, 0.44);
+    padding: 8px 10px;
+   border: solid 1px #444;
+    outline: none;
+}
+.cs_search_fld placeholder{
+	color: #444;
+}
+.navbar-collapse{
+	border-top: none;	
+}
+::-webkit-input-placeholder {
+   color: #797979;
+}
+.altr_product_cs .wrap_product_section{
+    margin: 0 auto;
+    float: none;
+    height: 500px;
+    border: solid 1px #444;
+    margin-top: 30px;
+	background-color: rgba(0, 0, 0, 0.44);
+    border-radius: 4px;	
+}
+#content .cs_frm{
+	margin:0 auto;
+	float:none;	
+}
+#content .cs_frm input,select, textarea {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.44);
+    border: solid 1px #444;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    color: #eee;
+    border-radius: 4px;
+}
+span.wpcf7-not-valid-tip{
+	position: relative;
+    top: -20px;	
+}
+.fixheight-cs{
+	height: 190px;
+    overflow: auto;
+}
+#content h2{
+    font-size: 40px;
+    line-height: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 2px;	
+}
+#content .buycott{
+	background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border: solid 1px #9A7171;
+    border-radius: 4px;
+    color: #BFB4B4;
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+#content .cs_frm .btnfld {
+    width: 120px;
+    margin-top: 10px;
+}
+#content .cs_frm label {
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    color: #dedede;
+}
+/* custom css end */
+
+
+.entry-content img {
+	margin: 0 0 1.5em 0;
+	}
+.alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+	}
+.alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+	float: right;
+	}
+.aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+	}
+.alignnone, img.alignnone {
+	/* not sure about this one */
+	}
+.wp-caption {
+	margin-bottom: 1.5em;
+	text-align: center;
+	padding-top: 5px;
+	}
+.wp-caption img {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	}
+.wp-caption p.wp-caption-text {
+	line-height: 1.5;
+	font-size: 10px;
+	margin: 0;
+	}
+.wp-smiley {
+	margin: 0 !important;
+	max-height: 1em;
+	}
+blockquote.left {
+	margin-right: 20px;
+	text-align: right;
+	margin-left: 0;
+	width: 33%;
+	float: left;
+	}
+blockquote.right {
+	margin-left: 20px;
+	text-align: left;
+	margin-right: 0;
+	width: 33%;
+	float: right;
+	}
+
+/*Wordpress editor styles end*/
+
+
+/*custom*/
+/*spinner*/
+width: 100%;
+@-webkit-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes uil-ring-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.uil-ring-css {
+  background: none;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.uil-ring-css > div {
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 160px;
+  top: 20px;
+  left: 20px;
+  border-radius: 80px;
+  box-shadow: 0 6px 0 0 #4175c9;
+  -ms-animation: uil-ring-anim 0.5s linear infinite;
+  -moz-animation: uil-ring-anim 0.5s linear infinite;
+  -webkit-animation: uil-ring-anim 0.5s linear infinite;
+  -o-animation: uil-ring-anim 0.5s linear infinite;
+  animation: uil-ring-anim 0.5s linear infinite;
+}
+#content .alt-search p{
+	margin: 10px 0;
+}
+#content .alt-search a{
+    background: none;
+    padding-top: 5px;
+    border-bottom: none;
+    background: none;
+}
