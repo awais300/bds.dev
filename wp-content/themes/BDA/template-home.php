@@ -10,10 +10,8 @@ Template Name: Home
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
-		<h2><?php //the_title(); ?></h2>
-
         <!-- search -->
-        
+        <div id='loading'><img src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
         <div class="search-box cs_search_fld">
 	        <div id="live-search" class="span4 offset4">
 		        <form method="get" id="bds-search" action="/">

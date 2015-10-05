@@ -82,7 +82,7 @@ if(isset($_POST['search_term']) && $_POST['search_term'] == 'Yes') {
         if(count($child_posts) > 0) {
         foreach ($child_posts as $key => $search) {
             $html .= "<li itle='{$search->post_title}' id='{$search->ID}' class='alt-search-term'>{$search->post_title}</li>";
-            $html .= "<br/>";
+            $html .= "";
         }
         $html .= "</ul>";
         echo $html; 

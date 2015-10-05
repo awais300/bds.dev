@@ -12,7 +12,6 @@ $current_country = get_ip_to_country();
 
 <div id="content">
 		<div class="post" id="post-<?php the_ID(); ?>">
-		<h2><?php the_title(); ?></h2>
 		<br/>
 			<div class="altr_product_cs">            
 				<div class="col-md-6 cs_frm">

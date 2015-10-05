@@ -1,5 +1,18 @@
 jQuery(document).ready(function($){
 
+//globla ajax functions
+$loading = $('#loading');
+$(document).ajaxStart(function() {
+	$loading.css('visibility', 'visible');
+});
+
+$(document).ajaxStop(function() {
+	$loading.css('visibility', 'hidden');
+});
+
+$ele = $('#live-search');
+//setSpinner($ele, 'top');
+
 /*
 *****************************************************************************************
 * Start Search Page scripts
@@ -395,5 +408,22 @@ function showError(missed, ele) {
 	if(missed == 'success') {
 		html = '<p>Thank you for your participation.<p/>';
 		ele.html(html);
+	}
+}
+
+/**
+ * set the spinner gif image
+ * jQuery $ele
+ * string position
+ */
+function setSpinner($ele, position) {
+	if(position == 'top') {
+		$p = $ele.offset();
+		oleft = $p.left;
+		otop = $p.top;
+		console.log(oleft);
+		console.log(otop);
+		$loading.css('left', oleft + 'px');
+		$loading.css('top', otop + 'px');
 	}
 }

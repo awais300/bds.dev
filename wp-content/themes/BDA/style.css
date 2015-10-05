@@ -47,6 +47,7 @@ body {
 }
 .cs_search_fld {
 	text-align:center;	
+	margin: 22px 0 0 0;
 }
 .cs_search_fld input[type=text] {
     border: solid 1px #444;
@@ -355,4 +356,11 @@ width: 100%;
     padding-top: 5px;
     border-bottom: none;
     background: none;
+}
+
+#loading{
+	display: block;
+	text-align: center;
+    position: relative;
+    visibility: hidden;
 }
