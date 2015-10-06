@@ -16,18 +16,22 @@ $current_country = get_ip_to_country();
 			<div class="altr_product_cs">            
 				<div class="col-md-6 cs_frm">
 					<form id="submit-product" class="submit-product" name="submit-product" action="/" method="post">
-						<label>Buycott Product Name</label>
+						<label>Buycott Product Name*</label>
+						<div id='loading-small-1'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
 						<input type="text" name="ptitle" id="ban-product" class="ban-product" />
+
 						<div id="alt-container">
 						<label>Alternate to Buycott Product</label>
+						<div id='loading-small-2'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
 						<input type="text" name="alt-product[]" id="alt-product" class="alt-products" />
 						<input type="text" name="alt-product[]" id="alt-product" class="alt-products" />
 						</div>
+
 						<input type="hidden" name="pp" id="pp" value="No">
 						<input type="hidden" name="pid" id="pid" value="0">
 						<input type="hidden" name="cp" id="cp" value="No">
 
-						<label>Your Country Name</label>	
+						<label>Your Country Name*</label>	
 						<select name="country" class="country" id="country">
 						<option value="">Select</option>
 						<?php 

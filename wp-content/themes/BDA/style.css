@@ -364,3 +364,18 @@ width: 100%;
     position: relative;
     visibility: hidden;
 }
+
+
+#loading-small-1{
+	display: inline-block;
+	visibility: hidden;
+}
+
+#loading-small-2{
+	display: inline-block;
+    visibility: hidden;
+}
+
+#post-26 .spin-img{
+	width: 12px;
+}

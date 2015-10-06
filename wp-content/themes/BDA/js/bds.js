@@ -1,18 +1,5 @@
 jQuery(document).ready(function($){
 
-//globla ajax functions
-$loading = $('#loading');
-$(document).ajaxStart(function() {
-	$loading.css('visibility', 'visible');
-});
-
-$(document).ajaxStop(function() {
-	$loading.css('visibility', 'hidden');
-});
-
-$ele = $('#live-search');
-//setSpinner($ele, 'top');
-
 /*
 *****************************************************************************************
 * Start Search Page scripts
@@ -391,22 +378,22 @@ function processChildData(data, ele, btn) {
 function showError(missed, ele) { 
 	html = '';
 	if(missed == 'buycott') {
-		html = '<p>Please enter buycott product/brand name.<p/>';
+		html = '<p class="buycott">Please enter buycott product/brand name.<p/>';
 		ele.html(html);
 	}
 
 	if(missed == 'country') {
-		html = '<p>Please select country.<p/>';
+		html = '<p class="buycott">Please select country.<p/>';
 		ele.html(html);
 	}
 
 	if(missed == 'required') {
-		html = '<p>Please complete the required fields.<p/>';
+		html = '<p class="buycott">Please complete the required fields.<p/>';
 		ele.html(html);
 	}
 
 	if(missed == 'success') {
-		html = '<p>Thank you for your participation.<p/>';
+		html = '<p class="buycott">Thank you for your participation.<p/>';
 		ele.html(html);
 	}
 }
@@ -416,14 +403,6 @@ function showError(missed, ele) {
  * jQuery $ele
  * string position
  */
-function setSpinner($ele, position) {
-	if(position == 'top') {
-		$p = $ele.offset();
-		oleft = $p.left;
-		otop = $p.top;
-		console.log(oleft);
-		console.log(otop);
-		$loading.css('left', oleft + 'px');
-		$loading.css('top', otop + 'px');
-	}
+function show() {
+	$loading.css('visibility', 'visible');
 }
