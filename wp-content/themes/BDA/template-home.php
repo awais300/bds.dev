@@ -15,7 +15,7 @@ Template Name: Home
         <div class="search-box cs_search_fld">
 	        <div id="live-search" class="span4 offset4">
 		        <form method="get" id="bds-search" action="/">
-		        <input type="text" value="" placeholder="Type buycott product name" name="s" id="bds-search-input" class=" drop_down"/><input type="submit" value="Search">
+		        <input type="text" value="" placeholder="Type buycott product name" autofocus name="s" id="bds-search-input" class=" drop_down"/><input type="submit" value="Search">
 		        </form>
 	        </div>
         </div>

@@ -1,5 +1,4 @@
 jQuery(document).ready(function($){
-
 /*
 *****************************************************************************************
 * Start Search Page scripts
@@ -130,7 +129,6 @@ jQuery(document).ready(function($){
 //globals
 var $ban_product = $('#ban-product');
 var $country = $('#country');
-var $all_product = $('.alt-products');
 var submit_btn = $('#submit-btn');
 
 var $info_message = $('#info-message');
@@ -145,8 +143,18 @@ $ban_product.on('change', function(e) {
 	disable(submit_btn);
 	changeBtnText(submit_btn, 'Wait...');
 
-	$all_product.val('');
+	if($.trim($(this).val()) == '') {
+		var all = $('.alt-products');
+		disable(all);
+	} else {
+		var all = $('.alt-products');
+		enable(all);
+	}
+
+	//clear child proudcts fields and notices if parent content is changed
+	$('.alt-products').val('');
 	$('.child-prod').remove();
+
 	var title = $ban_product.val();
 	$.ajax({
 	    'type': 'POST',
@@ -201,7 +209,7 @@ $(document).on('change', '.alt-products', function(e) {
 	    },
 	    'dataType': 'json',
 	    'success': function(data) {
-	    	if(data.message != '') {
+	    	if(data != '') {
 	    		processChildData(data, $this, submit_btn);
 	    	} else {
 	    		enable(submit_btn);
@@ -224,7 +232,9 @@ $(document).on('submit', '#submit-product', function(e) {
 	var buycott = $.trim($ban_product.val());
 	var country = $.trim($country.val());
 
+	
 
+	
 	if(buycott == '') {
 		showError('buycott', $info_message);
 		return;
@@ -234,10 +244,22 @@ $(document).on('submit', '#submit-product', function(e) {
 		showError('country', $info_message);
 		return;
 	}
+
+	//check Fields and Notices are same in length or not
+	$f = $('.alt-products');
+	$n = $('.child-prod');
+	if($f.length == $n.length){
+		showError('length', $info_message);
+		return;
+	}
+
 	disable(submit_btn);
 	changeBtnText(submit_btn, 'Submitting...');
 
-	$info_message.children().remove();
+	$notices = $('.buycott');
+	$newinputs = $('input.new');
+	$newinputs.next('span').remove();
+	$notices.remove();
 
 	$.ajax({
 	    'type': 'POST',
@@ -245,21 +267,45 @@ $(document).on('submit', '#submit-product', function(e) {
 	    'data': formData + "&submit_product=Yes",
 	    'dataType': 'json',
 	    'success': function(data) {
-	    	if(data.message != '') {
+	    	if(data.message != '' && 0) {
 	    		showError('required', $info_message);
 	    	} else {
 	    		showError('success', $info_message);
 	    	}
 
-	    	$(this).trigger("reset");
+	    	document.getElementById('submit-product').reset();
 	    	enable(submit_btn);
 			changeBtnText(submit_btn, 'Submit');
 	    },
 	    'error': function() {
-	      alert("System error! Please try again in a moment. Thanks!");
+	      //alert("System error! Please try again in a moment. Thanks!");
 	      //window.location = site_url;
 	    }
 	});
+});
+
+var count = 0;
+$('#addnew').on('click', function(e){
+	e.preventDefault();
+	if($.trim($ban_product.val()) == '') {
+		return;
+	}
+
+	count++;
+	if(count < 5) {
+		html = '<input type="text" name="alt-product[]" focus class="alt-products new" /><span><a href="#" class="remove">Remove this</a></span>';
+		$alt_cont.append(html);
+	}
+});
+
+$(document).on('click', 'a.remove', function(){
+	count--;
+	$this = $(this);
+	$this.parent().prev().remove();
+	if($this.parent().next().hasClass('child-prod')) {
+			$this.parent().next().remove();
+	}
+	$this.parent().remove();
 });
 
 /*
@@ -279,9 +325,16 @@ $(document).on('submit', '#submit-product', function(e) {
  */
 function scrollTo(ele)
 {
-    $("body, html").animate({ 
-            scrollTop: $(ele).offset().top 
+	if (ele instanceof jQuery) {
+		$("body, html").animate({
+    	scrollTop: ele.offset().top 
         }, 600);
+
+	} else {
+		$("body, html").animate({
+    	scrollTop: $(ele).offset().top 
+        }, 600);
+	}
 }
 
 
@@ -348,18 +401,18 @@ function processParentData(data, ele, $pp, $cp, $pid, btn) {
  * @param  JSON data
  */
 function processChildData(data, ele, btn) {
-	if(data.message != '') {
-		if(ele.next().hasClass('child-prod')) {
-			ele.next().remove();
+	if($.trim(data.message) != '') {
+		if(ele.next().next().hasClass('child-prod')) {
+			ele.next().next().remove();
 		} 
-		ele.after(data.message);
-		ele.next().slideDown(200, function(){
+		ele.next().after(data.message);
+		ele.next().next().slideDown(200, function(){
 			enable(btn);
 			changeBtnText(btn, 'Submit');
 		});
-	} else if(ele.next().hasClass('child-prod')) {
-			ele.next().slideUp(200, function () {
-				ele.next().remove();
+	} else if(ele.next().next().hasClass('child-prod')) {
+			ele.next().next().slideUp(200, function () {
+				ele.next().next().remove();
 				enable(btn);
 				changeBtnText(btn, 'Submit');
 			});
@@ -393,16 +446,19 @@ function showError(missed, ele) {
 	}
 
 	if(missed == 'success') {
-		html = '<p class="buycott">Thank you for your participation.<p/>';
+		var c = $('#country').val();
+		html = '<p class="buycott success-msg">Thank you for your participation. ' +c+' should feel proud. :)<p/>';
 		ele.html(html);
 	}
+
+	if(missed == 'length') {
+		html = '<p class="buycott">All provided alternate proudcts already exist, please provide atleast one different. Thanks!<p/>';
+		ele.html(html);
+	}
+	setTimeout(hideNotice, 5000, ele);
+	scrollTo(ele);
 }
 
-/**
- * set the spinner gif image
- * jQuery $ele
- * string position
- */
-function show() {
-	$loading.css('visibility', 'visible');
+function hideNotice(ele) {
+	ele.children('p').fadeOut(3000);
 }

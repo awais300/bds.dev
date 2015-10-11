@@ -379,3 +379,33 @@ width: 100%;
 #post-26 .spin-img{
 	width: 12px;
 }
+
+div#info-message .buycott {
+    border: solid 1px #F73F08;
+}
+
+div#info-message .success-msg {
+    border: solid 1px #146717;
+}
+
+#addnew{
+  display: block;
+  float: right;
+  padding-bottom: 8px;
+}
+#content input.alt-products.new{
+  width: 60%;
+}
+
+#submit-product span a {
+      float: right;
+    margin: 10px 0 0 0;
+}
+
+/*recaptcha*/
+#recap {
+  padding-bottom: 15px;
+}
+#recap > div > div:first-child{
+margin: 0 auto;
+}

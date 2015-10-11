@@ -6,26 +6,30 @@
 <?php get_header();?>
 
 <?php 
+$prod_val = '';
+if(isset($_GET['prod']) && !empty($_GET['prod'])) {
+	$prod_val = $_GET['prod'];
+}
 $countries = get_countries();
 $current_country = get_ip_to_country();
 ?>
 
 <div id="content">
 		<div class="post" id="post-<?php the_ID(); ?>">
-		<br/>
+<h2><?php the_title(); ?></h2>
 			<div class="altr_product_cs">            
 				<div class="col-md-6 cs_frm">
 					<form id="submit-product" class="submit-product" name="submit-product" action="/" method="post">
 						<label>Buycott Product Name*</label>
 						<div id='loading-small-1'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
-						<input type="text" name="ptitle" id="ban-product" class="ban-product" />
+						<input type="text" name="ptitle" id="ban-product" autofocus value="<?php echo $prod_val; ?>" class="ban-product" />
 
 						<div id="alt-container">
 						<label>Alternate to Buycott Product</label>
 						<div id='loading-small-2'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
-						<input type="text" name="alt-product[]" id="alt-product" class="alt-products" />
-						<input type="text" name="alt-product[]" id="alt-product" class="alt-products" />
+						<input type="text" name="alt-product[]" disabled="disabled" class="alt-products" /><span></span>
 						</div>
+						<p><a href="#" id="addnew">Add more alternates</a></p>
 
 						<input type="hidden" name="pp" id="pp" value="No">
 						<input type="hidden" name="pid" id="pid" value="0">

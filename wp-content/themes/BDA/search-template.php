@@ -262,7 +262,7 @@ if(isset($_POST['search_child']) && $_POST['search_child'] == 'Yes') {
         if(count($search_response) > 0) {
             $found = true;
             $title = $search_response->title;
-            $html = "<div id='child-prod' class='child-prod buycott'>'{$stitle}' already exit. Please provide something different.</div>";
+            $html = "<div class='child-prod buycott'>'{$stitle}' already exit. Please provide something different.</div>";
             $response['message'] = $html;
         }
     }
