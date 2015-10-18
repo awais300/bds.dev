@@ -136,6 +136,8 @@ var $alt_cont = $('#alt-container');
 var $pp = $('#pp');
 var $cp = $('#cp');
 var $pid = $('#pid');
+var loading1 = $('#loading-small-1');
+var loading2 = $('#loading-small-2');
 
 
 /*parent proudct search*/
@@ -151,6 +153,7 @@ $ban_product.on('change', function(e) {
 		enable(all);
 	}
 
+	show(loading1);
 	//clear child proudcts fields and notices if parent content is changed
 	$('.alt-products').val('');
 	$('.child-prod').remove();
@@ -167,10 +170,12 @@ $ban_product.on('change', function(e) {
 	    'success': function(data) {
 	    	if(data != '') {
 	    		processParentData(data, $ban_product, $pp, $cp, $pid, submit_btn);
+	    		$("#alt-search").niceScroll({touchbehavior:false,cursorcolor:"#666",cursoropacitymax:0.7,cursorwidth:6,background:"#ccc",autohidemode:false});
 	    	} else {
 	    		enable(submit_btn);
 				changeBtnText(submit_btn, 'Submit');
 	    	}
+	    	hide(loading1);
 	    },
 	    'error': function() {
 	      alert("System error! Please try again in a moment. Thanks!");
@@ -198,6 +203,29 @@ $(document).on('change', '.alt-products', function(e) {
 	disable(submit_btn);
 	changeBtnText(submit_btn, 'Wait...');
 
+	var loading3 = '';
+	var isFirst = false;
+	if($(this).is($("input.alt-products:first"))){
+		isFirst = true;
+		show(loading2);
+	} else {
+		isFirst = false;
+		var offSet = $this.offset();
+		var w = $this.outerWidth();
+		var h = $this.height() / 2;
+		var top = offSet.top;
+		var left = offSet.left;
+		left = left + w;
+		top = top + h;
+		var html = '<div id="loading-small-3"><img class="spin-img" src="'+site_url+'/wp-content/themes/BDA/images/spinner.gif"></div>';
+		$('body').after(html);
+
+		loading3 = $('#loading-small-3');
+		loading3.css('top', top + 'px');
+		loading3.css('left', left + 'px');
+		show(loading3);
+	}
+
 	$.ajax({
 	    'type': 'POST',
 	    'url': site_url + '/search',
@@ -215,6 +243,12 @@ $(document).on('change', '.alt-products', function(e) {
 	    		enable(submit_btn);
 				changeBtnText(submit_btn, 'Submit');
 	    	}
+
+	    	if(isFirst){
+	    		hide(loading2);
+	    	} else {
+	    		hide(loading3);
+	    	}
 	    },
 	    'error': function() {
 	      alert("System error! Please try again in a moment. Thanks!");
@@ -231,9 +265,6 @@ $(document).on('submit', '#submit-product', function(e) {
 	formData = $this.serialize();
 	var buycott = $.trim($ban_product.val());
 	var country = $.trim($country.val());
-
-	
-
 	
 	if(buycott == '') {
 		showError('buycott', $info_message);
@@ -258,8 +289,15 @@ $(document).on('submit', '#submit-product', function(e) {
 
 	$notices = $('.buycott');
 	$newinputs = $('input.new');
-	$newinputs.next('span').remove();
-	$notices.remove();
+	$newinputs.next('span').fadeOut('100', function(){
+		$newinputs.next('span').remove();
+	});
+	$notices.fadeOut('100', function(){
+		$notices.remove();
+	});
+
+	$('#ascrail2000').remove();
+	$('#ascrail2000-hr').remove();
 
 	$.ajax({
 	    'type': 'POST',
@@ -293,17 +331,25 @@ $('#addnew').on('click', function(e){
 
 	count++;
 	if(count < 5) {
-		html = '<input type="text" name="alt-product[]" focus class="alt-products new" /><span><a href="#" class="remove">Remove this</a></span>';
+		html = '<input type="text" name="alt-product[]" class="alt-products new" /><span><a href="#" class="remove">Remove</a></span>';
 		$alt_cont.append(html);
 	}
 });
 
-$(document).on('click', 'a.remove', function(){
+$(document).on('click', 'a.remove', function(e){
+	e.preventDefault();
 	count--;
 	$this = $(this);
-	$this.parent().prev().remove();
-	if($this.parent().next().hasClass('child-prod')) {
-			$this.parent().next().remove();
+	$p = $this.parent().prev();
+	$n = $this.parent().next();
+	$p.fadeOut('200', function(){
+		$p.remove();
+	});
+
+	if($n.hasClass('child-prod')) {
+			$n.fadeOut('200', function(){
+				$n.remove();
+			});
 	}
 	$this.parent().remove();
 });
@@ -315,9 +361,7 @@ $(document).on('click', 'a.remove', function(){
 *****************************************************************************************
 */
 
-}); //document.ready
-
-
+/*fucntions*/
 
 /**
  * Scroll up to the given elemeent (ele)
@@ -459,6 +503,17 @@ function showError(missed, ele) {
 	scrollTo(ele);
 }
 
+/*hide notices*/
 function hideNotice(ele) {
 	ele.children('p').fadeOut(3000);
 }
+
+function show(ele) {
+	ele.fadeIn('10');
+}
+
+function hide(ele) {
+	ele.hide(200);
+}
+
+}); //document.ready
