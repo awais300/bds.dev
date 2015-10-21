@@ -161,7 +161,7 @@ endif;
  * @return int $post_id
  */
 function create_parent_post($title, $user_country) {
-		$author_id = 2;
+		$author_id = 3;
 		return $post_id = wp_insert_post(
 			array(
 				'post_author'		=>	$author_id,
@@ -186,7 +186,7 @@ create_child_post('testChild2', 'someother@gmail.com', 'USA', $myid);
  * @return int $post_id
  */
 function create_child_post($title, $user_country, $parent_postID) {
-		$author_id = 2;
+		$author_id = 3;
 		$meta_key = '_wpcf_belongs_banned-product_id';
 		$post_id = wp_insert_post(
 			array(

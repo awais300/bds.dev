@@ -16,7 +16,7 @@ function get_message($msg, $val, $test = '') {
 $site_url = get_site_url();
 $site_url = $site_url . "/submit-product/?prod={$val}";
 
-$messages_array['notFoundParent'] = "Our system could not found '{{VAL}}'. You can still submit this produdct/brand by clicking <a id='notfoundp' class='notfound' href='$site_url' title='Submit {{VAL}}'>Here</a>.";
+$messages_array['notFoundParent'] = "Our system could not found '{{VAL}}'. You can still submit this produdct/brand by clicking <a id='notfoundp' class='notfound' href='$site_url' title='Submit {{VAL}}'>Here</a>";
 
 $messages_array['notFoundChild'] = "Currently we don't know any alternative of '{{VAL}}'. Please contribute by submitting an alternavtie to {{VAL}} by clicking <a id='notfoundc' class='notfound' href='$site_url' title='Submit {{VAL}}'>Here</a>.";
 

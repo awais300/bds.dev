@@ -15,7 +15,7 @@ Template Name: Home
         <div class="search-box cs_search_fld">
 	        <div id="live-search" class="span4 offset4">
 		        <form method="get" id="bds-search" action="/">
-		        <input type="text" value="" placeholder="Type buycott product name" autofocus name="s" id="bds-search-input" class=" drop_down"/><input type="submit" value="Search">
+		        <input type="text" value="" placeholder="Type boycott product name" autofocus name="s" id="bds-search-input" class=" drop_down"/><input type="submit" value="Search">
 		        </form>
 	        </div>
         </div>
@@ -37,7 +37,25 @@ Template Name: Home
 		<?php endwhile; endif; ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 	
-	<?php comments_template(); ?>
+	<?php //comments_template(); ?>
+	<div id="disqus_thread"></div>
+<script>
+    
+    var disqus_config = function () {
+        this.page.url = 'http://bds.dev/',
+        this.page.identifier = bdsdev
+    };
+    
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//bdsdev.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 </div>
 

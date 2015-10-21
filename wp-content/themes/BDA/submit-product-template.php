@@ -7,9 +7,11 @@
 
 <?php 
 $prod_val = '';
+$disable = 'disabled="disabled"';
 if(isset($_GET['prod']) && !empty($_GET['prod'])) {
 	$prod_val = $_GET['prod'];
-}
+	$disable = '';
+} 
 $countries = get_countries();
 $current_country = get_ip_to_country();
 ?>
@@ -20,14 +22,14 @@ $current_country = get_ip_to_country();
 			<div class="altr_product_cs">            
 				<div class="col-md-6 cs_frm">
 					<form id="submit-product" class="submit-product" name="submit-product" action="/" method="post">
-						<label>Buycott Product Name*</label>
+						<label>Boycott Product Name*</label>
 						<div id='loading-small-1'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
 						<input type="text" name="ptitle" id="ban-product" autofocus value="<?php echo $prod_val; ?>" class="ban-product" />
 
 						<div id="alt-container">
-						<label>Alternate to Buycott Product</label>
+						<label>Alternate to Boycott Product</label>
 						<div id='loading-small-2'><img class="spin-img" src="<?php bloginfo('template_directory')?>/images/spinner.gif"></div>
-						<input type="text" name="alt-product[]" disabled="disabled" class="alt-products" /><span></span>
+						<input type="text" name="alt-product[]" <?php echo $disable; ?> class="alt-products" /><span></span>
 						</div>
 						<p><a href="#" id="addnew">Add more alternates</a></p>
 

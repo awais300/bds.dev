@@ -104,7 +104,7 @@ span.wpcf7-not-valid-tip{
 }
 #content h2{
     font-size: 40px;
-    line-height: 30px;
+    line-height: 38px;
     margin-bottom: 50px;
     text-align: center;
     font-weight: 300;
@@ -197,157 +197,13 @@ blockquote.right {
 
 
 /*custom*/
-/*spinner*/
-width: 100%;
-@-webkit-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+.navbar-brand img {
+      margin: -14px 0 0 -14px;
+    height: 48px;
+    width: 200px;
 }
-@-webkit-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-moz-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-ms-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-moz-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes uil-ring-anim {
-  0% {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-.uil-ring-css {
-  background: none;
-  position: relative;
-  width: 200px;
-  height: 200px;
-}
-.uil-ring-css > div {
-  position: absolute;
-  display: block;
-  width: 160px;
-  height: 160px;
-  top: 20px;
-  left: 20px;
-  border-radius: 80px;
-  box-shadow: 0 6px 0 0 #4175c9;
-  -ms-animation: uil-ring-anim 0.5s linear infinite;
-  -moz-animation: uil-ring-anim 0.5s linear infinite;
-  -webkit-animation: uil-ring-anim 0.5s linear infinite;
-  -o-animation: uil-ring-anim 0.5s linear infinite;
-  animation: uil-ring-anim 0.5s linear infinite;
-}
+
+
 #content .alt-search p{
 	margin: 10px 0;
 }
@@ -382,7 +238,7 @@ position: absolute;
 display: none;
 }
 
-.alt-search {
+#submit-product #alt-search {
   height: 100px;
   overflow-y: scroll;
 }
@@ -435,4 +291,19 @@ border: none !important;
 
 #ascrail2000 > div:first-child:hover {
   opacity: 1.0 !important;
+}
+
+/*diqus comment system*/
+#disqus_thread {
+  padding-top: 100px;
+}
+
+#content hr{
+  margin-bottom: 100px;
+  margin-top: 100px;
+  display: block;
+  height: px;
+  border: 0;
+  border-top: 1px solid #666;
+  padding: 0; 
 }
