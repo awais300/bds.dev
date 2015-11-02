@@ -76,3 +76,14 @@
 #live-search .set-height{
   height: 0;
 }
+
+
+
+
+@media (max-width: 1020px) {
+  
+  #content .live-search-wrap .live-search{
+    width: 344px;
+    padding: 10px;
+  }
+}

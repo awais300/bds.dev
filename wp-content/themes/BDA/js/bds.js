@@ -13,6 +13,14 @@ jQuery(document).ready(function($){
 	var searchField = $('#bds-search-input');
 	var alt_content = $('#alternate-content');
 
+	$(document)
+	.ajaxStart(function(){
+	    $("#loading").css('visibility', 'visible');
+	})
+	.ajaxStop(function(){
+	    $("#loading").css('visibility', 'hidden');
+	});
+
 	/*show/hide the search suggestion and search listing box*/
 	$(document).on('keyup', '#bds-search-input', function(e){
 		if(alt_content.is(":visible")){

@@ -1,19 +1,19 @@
 === Visualizer: Charts and Graphs ===
-Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
-Tags: plugin,widget,shortcode,chart, charts, charting, graph, graphs, graphing, visualisation, visualise data, visualization, visualize data, HTML5, canvas, pie chart, line chart, bar chart, column chart, gauge chart, area chart, scatter chart, candlestick chart, geo chart, google visualization api
+Contributors:  codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle 
+Tags: chart, charts, charting, graph, graphs, graphing, visualisation, visualise data, visualization, visualize data, HTML5, canvas, pie chart, line chart, bar chart, column chart, gauge chart, area chart, scatter chart, candlestick chart, geo chart, google visualization api
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 1.4.2.3
+Tested up to: 4.3.1
+Stable tag: trunk
 License: GPL v2.0 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
-A simple, easy to use and quite powerful chart tool to create, manage and embed interactive charts into your WordPress posts and pages.
+A simple, easy to use and quite powerful tool to create, manage and embed interactive charts into your WordPress posts and pages.
 
 == Description ==
 
-WordPress Visualizer Charts plugin is a simple, easy to use and quite powerful tool to create, manage and embed interactive charts into your WordPress posts and pages.
+WordPress Visualizer plugin is a simple, easy to use and quite powerful tool to create, manage and embed interactive charts into your WordPress posts and pages.
 
-The plugin uses Google Visualization API to render Google charts, which support cross-browser compatibility (adopting VML for older IE versions) and cross-platform portability to iOS and new Android releases.
+The plugin uses Google Visualization API to render charts, which support cross-browser compatibility (adopting VML for older IE versions) and cross-platform portability to iOS and new Android releases.
 
 ### 9 Chart types ###
 The plugin provides a variety of charts that are optimized to address your data visualization needs. It is line chart, area chart, bar chart, column chart, pie chart, geo chart, gauge chart, candlestick chart and scatter chart. These charts are based on pure HTML5/SVG technology (adopting VML for old IE versions), so no extra plugins are required. Adding these charts to your page can be done in a few simple steps.
@@ -28,13 +28,13 @@ Charts are rendered using HTML5/SVG technology to provide cross-browser compatib
 
 ### Knowledge Base ###
 
-1. [How can I create a chart?](https://github.com/codeinwp/visualizer/wiki/How-can-I-create-a-chart%3F)
-1. [How can I edit a chart?](https://github.com/codeinwp/visualizer/wiki/How-can-I-edit-a-chart%3F)
-1. [How can I clone a chart?](https://github.com/codeinwp/visualizer/wiki/How-can-I-clone-a-chart%3F)
-1. [How can I delete a chart?](https://github.com/codeinwp/visualizer/wiki/How-can-I-delete-a-chart%3F)
-1. [How can I highlight a single bar?](https://github.com/codeinwp/visualizer/wiki/How-can-I-highlight-a-single-bar%3F)
-1. [How can I populate chart series and data dynamically?](https://github.com/codeinwp/visualizer/wiki/How-can-I-populate-chart-series-and-data-dynamically%3F)
-1. [How can I populate data from Google Spreadsheet?](https://github.com/codeinwp/visualizer/wiki/How-can-I-populate-data-from-Google-Spreadsheet%3F)
+1. [How can I create a chart?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-create-a-chart%3F)
+1. [How can I edit a chart?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-edit-a-chart%3F)
+1. [How can I clone a chart?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-clone-a-chart%3F)
+1. [How can I delete a chart?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-delete-a-chart%3F)
+1. [How can I highlight a single bar?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-highlight-a-single-bar%3F)
+1. [How can I populate chart series and data dynamically?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-populate-chart-series-and-data-dynamically%3F)
+1. [How can I populate data from Google Spreadsheet?](https://github.com/madpixelslabs/visualizer/wiki/How-can-I-populate-data-from-Google-Spreadsheet%3F)
 
 == Installation ==
 
@@ -56,6 +56,15 @@ Pay attention that to turn your shortcodes into graphs, your theme has to have `
 5. Charts library
 
 == Changelog ==
+
+= 1.5.1 =
+* Fixed bug with from web button
+
+= 1.5 =
+* Added support for live editor
+* Added support for importing data from other charts
+* Added filter for chart settings
+* Fixed bug when zero was not working on the charts
 
 = 1.4.2.3 =
 * Implemented ability to edit horizontal and vertical axis number format for bar and column charts
